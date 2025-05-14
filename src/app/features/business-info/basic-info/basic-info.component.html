@@ -1,0 +1,74 @@
+<div class="container py-5">
+  <div class="card-custom mx-auto" style="max-width: 600px">
+    <h2 class="text-center text-primary mb-4">Business Profile Setup</h2>
+
+    <form #businessForm="ngForm" (ngSubmit)="submitForm()">
+      <!-- Business Name -->
+      <div class="mb-3">
+        <label for="businessName" class="form-label">Business Name</label>
+        <input
+          type="text"
+          class="form-control shadow-sm rounded"
+          id="businessName"
+          name="businessName"
+          required
+          [(ngModel)]="formData.businessName"
+        />
+      </div>
+
+      <!-- Tagline -->
+      <div class="mb-3">
+        <label for="tagline" class="form-label">Tagline / Slogan</label>
+        <input
+          type="text"
+          class="form-control shadow-sm rounded"
+          id="tagline"
+          name="tagline"
+          [(ngModel)]="formData.tagline"
+        />
+      </div>
+
+      <!-- Logo Upload -->
+      <div class="mb-3">
+        <label for="logo" class="form-label">Upload Logo</label>
+        <input
+          type="file"
+          class="form-control shadow-sm rounded"
+          id="logo"
+          (change)="handleLogoUpload($event)"
+        />
+        <small class="form-text text-muted"
+          >Leave empty to use a text-based logo.</small
+        >
+      </div>
+
+      <!-- Category Dropdown -->
+      <div class="mb-4">
+        <label for="category" class="form-label">Business Category</label>
+        <select
+          class="form-select shadow-sm rounded"
+          id="category"
+          name="category"
+          required
+          [(ngModel)]="formData.category"
+        >
+          <option value="" disabled selected>Select a category</option>
+          <option value="retail">Retail</option>
+          <option value="services">Services</option>
+          <option value="tech">Technology</option>
+          <option value="education">Education</option>
+          <option value="health">Healthcare</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary w-100 py-2"
+        [disabled]="!businessForm.valid"
+      >
+        Save Business
+      </button>
+    </form>
+  </div>
+</div>
