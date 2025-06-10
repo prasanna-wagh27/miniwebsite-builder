@@ -1,0 +1,63 @@
+<div class="container py-5">
+  <h2 class="text-center text-primary mb-4">Contact Information</h2>
+  <app-progress-bar></app-progress-bar>
+  <div class="card-custom mx-auto" style="max-width: 600px">
+    <form #businessForm="ngForm" (ngSubmit)="submitForm()">
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          class="form-control shadow-sm rounded"
+          id="phoneNumber"
+          name="phoneNumber"
+          required
+          [(ngModel)]="contactInfo.phoneNumber"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="text"
+          class="form-control shadow-sm rounded"
+          id="email"
+          name="email"
+          [(ngModel)]="contactInfo.email"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="whatsapp" class="form-label">Whatsapp Number</label>
+        <input
+          type="text"
+          class="form-control shadow-sm rounded"
+          id="whatsapp"
+          name="whatsapp"
+          [(ngModel)]="contactInfo.whatsapp"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="social" class="form-label"
+          >Social Media Links Category</label
+        >
+        <input
+          type="text"
+          class="form-control shadow-sm rounded"
+          id="social"
+          name="social"
+          required
+          [(ngModel)]="contactInfo.social"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary w-100 py-2"
+        [disabled]="!businessForm.valid"
+      >
+        Save Business
+      </button>
+    </form>
+  </div>
+</div>

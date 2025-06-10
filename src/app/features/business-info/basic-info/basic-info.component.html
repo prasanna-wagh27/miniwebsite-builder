@@ -3,7 +3,6 @@
     <h2 class="text-center text-primary mb-4">Business Profile Setup</h2>
 
     <form #businessForm="ngForm" (ngSubmit)="submitForm()">
-      <!-- Business Name -->
       <div class="mb-3">
         <label for="businessName" class="form-label">Business Name</label>
         <input
@@ -12,11 +11,10 @@
           id="businessName"
           name="businessName"
           required
-          [(ngModel)]="formData.businessName"
+          [(ngModel)]="basicInfo.businessName"
         />
       </div>
 
-      <!-- Tagline -->
       <div class="mb-3">
         <label for="tagline" class="form-label">Tagline / Slogan</label>
         <input
@@ -24,11 +22,10 @@
           class="form-control shadow-sm rounded"
           id="tagline"
           name="tagline"
-          [(ngModel)]="formData.tagline"
+          [(ngModel)]="basicInfo.tagline"
         />
       </div>
 
-      <!-- Logo Upload -->
       <div class="mb-3">
         <label for="logo" class="form-label">Upload Logo</label>
         <input
@@ -42,7 +39,6 @@
         >
       </div>
 
-      <!-- Category Dropdown -->
       <div class="mb-4">
         <label for="category" class="form-label">Business Category</label>
         <select
@@ -50,7 +46,7 @@
           id="category"
           name="category"
           required
-          [(ngModel)]="formData.category"
+          [(ngModel)]="basicInfo.category"
         >
           <option value="" disabled selected>Select a category</option>
           <option value="retail">Retail</option>

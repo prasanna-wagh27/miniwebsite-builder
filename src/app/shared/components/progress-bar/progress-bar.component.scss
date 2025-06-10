@@ -1,0 +1,55 @@
+.progressbar-container {
+  position: relative;
+  padding: 40px 20px;
+  background-color: #FDF6E3;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.progress-line {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background-color: #F4D47C; /* Yellow progress track */
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  background-color: #D3DBDD; /* Default step background */
+  color: #233038;             /* Default text */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-family: 'Lexend Deca', sans-serif;
+  border: 2px solid #F4D47C; /* Yellow border for future steps */
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.step.done {
+  background-color: #E64A00; /* Orange fill */
+  border-color: #E64A00;
+  color: #FDF6E3;            /* Light text on dark bg */
+}
+
+.step.active {
+  background-color: #F4D47C; /* Yellow active step */
+  border-color: #E64A00;
+  color: #233038;
+  transform: scale(1.1);
+}

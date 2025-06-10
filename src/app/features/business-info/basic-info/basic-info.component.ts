@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { importProvidersFrom } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-basic-info',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './basic-info.component.html',
-  styleUrl: './basic-info.component.css'
+  styleUrl: './basic-info.component.scss',
 })
 export class BasicInfoComponent {
 
-  formData = {
+  basicInfo = {
     businessName: '',
     tagline: '',
     category: '',
@@ -17,11 +20,11 @@ export class BasicInfoComponent {
 
   handleLogoUpload(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.formData.logoFile = input.files?.[0] ?? null;
+    this.basicInfo.logoFile = input.files?.[0] ?? null;
   }
 
   submitForm() {
-    console.log('Submitted:', this.formData);
+    console.log('Submitted:', this.basicInfo);
     // Placeholder for submission logic
   }
 }
